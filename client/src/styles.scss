@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+/* Text Font Styles */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --active: #dae1f0;
+  --hover: #dae1f0;
+  --deleted: red;
+  --border-box: 2px solid #ddd;
+;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+main {
+  width: 100vw !important;
+  height: 100vh !important; /* important to set static elements cover the screen */
+}
+/* Home Styles */
+
+.home {
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-template-rows: 90px 142px auto;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sidebar navbar"
+    "sidebar filterbar"
+    "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-right: var(--border-box);
+  padding: 8px 0px;
+  position: relative;
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align position items in the box  */
+    position: relative;
+    height: 100vh;
+  }
+}
+.navbar {
+  grid-area: navbar;
+  position: relative;
+  nav {
+    width: 100%;
+    height: 100%;
+  }
+  border-bottom: var(--border-box);
+}
+
+.filterbar {
+  grid-area: filterbar;
+  position: relative;
+
+}
+
+.main {
+  grid-area: main;
+}
+
+/* Styles for the sidebar */
+
+.active {
+  background: var(--active);
+}
+
+
+.light-mode {
+   background: #FAF7E7;
+}

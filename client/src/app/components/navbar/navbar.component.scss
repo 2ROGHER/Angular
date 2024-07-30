@@ -1,0 +1,54 @@
+@import url("../../../styles.scss");
+
+.input-search {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+
+  input {
+    width: 256px;
+    height: 40px;
+    border-radius: 4px;
+    font-family: "Manrope";
+    font-size: 16px;
+    color: #8c8c8c;
+    background-image: url("../../../assets/svg/search-regular.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 16px;
+    padding: 8px 16px 8px 64px;
+    outline: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Styles for toggle button */
+.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 50px 50px ;
+  padding: 4px;
+  border: 1px solid #ddd;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 24px;
+  background: #fff;
+
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+}
+
