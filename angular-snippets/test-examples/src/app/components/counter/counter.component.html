@@ -1,0 +1,23 @@
+<!--This is the counter template HTML view -->
+<section class="container">
+  <div class="view-container">
+    <div>
+    <!-- moustach sintaxis to bind the contrller class property with it's view -->
+      {{ watcher.seconds }}: {{ watcher.minutes }} : {{ watcher.hours }}
+    </div>
+  </div>
+
+  <div class="buttons-group">
+    <button class="btn" (click)="watcher.start()">start</button>
+    <button class="btn" (click)="watcher.reset()">reset</button>
+    <button class="btn" (click)="addNewTimerPopup()">new stopwatch</button>
+  </div>
+
+  <!-- This has an event emitter that is called when the one timer is added to list -->
+  <app-form (createTimer)="addTimerToList($event)" ></app-form>
+
+  <app-timer-list
+    [data]="stopWatcherList"
+  ></app-timer-list>
+
+</section>

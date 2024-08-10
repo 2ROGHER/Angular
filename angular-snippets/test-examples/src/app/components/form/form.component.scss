@@ -1,0 +1,71 @@
+.form-container {
+  position: relative;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "seconds minutes hours"
+      "create create create";
+
+    background: #aaa;
+    padding: 64px;
+    border-radius: 8px;
+  }
+
+  .seconds {
+    grid-area: seconds;
+  }
+
+  .minutes {
+    grid-area: minutes;
+  }
+
+  .hours {
+    grid-area: hours;
+  }
+
+  .create {
+    grid-area: create;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.input {
+  border: 1px solid #eee;
+  outline: none;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  width: 84px;
+  height: 84px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.create button {
+  background: #fff;
+  outline: none;
+  padding: 16px 32px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

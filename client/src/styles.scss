@@ -72,11 +72,14 @@ main {
 .filterbar {
   grid-area: filterbar;
   position: relative;
+  border-bottom: var(--border-box);
 
 }
 
 .main {
   grid-area: main;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Styles for the sidebar */

@@ -13,4 +13,14 @@ import { HomeComponent } from './pages/home/home.component';
 })
 export class AppComponent {
   title = 'rick and morty app';
+  time: number = 0;
+
+  constructor() {
+    this.title = "rick and morty app";
+    this.time = 1;
+  }
 }
+
+let  app = new AppComponent();
+console.log(app.time);
+console.log((app.title));
