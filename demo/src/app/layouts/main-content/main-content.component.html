@@ -1,0 +1,10 @@
+<section class="main">
+  <app-character-list [data]="results"></app-character-list>
+</section>
+
+
+<app-pagination
+  (handlePaginationItem)="getItemFromPagination($event)"
+></app-pagination>
+
+

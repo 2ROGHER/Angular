@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Root styles here: */
+:root {
+  /* TODO: Implement roots styles here */
+  --primary-color: #3c7af2;
+  --hover-color: #dae1f0;
+  --border-color: #ddd;
+  --border-size: 2px;
+  --online-color: #33FF23;
+  --offline-color: #f1f1f1;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #f3f3f3;
+  overflow-x:  hidden; /* This is importante to  hidden incesary scrolls in the window */
+}
+
+
+.active {
+  background-color: var(--hover-color);
+  border-radius: 4px;
+}

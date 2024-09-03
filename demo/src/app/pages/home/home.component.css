@@ -1,0 +1,46 @@
+.dashboard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-template-rows: 96px 132px auto;
+  grid-template-areas:
+    "nav-bar search-bar search-bar"
+    "nav-bar filter-bar filter-bar"
+    "nav-bar main-content main-content";
+}
+.nav-bar,
+.search-bar,
+.filter-bar,
+.main-content {
+  position: relative;
+}
+
+.nav-bar {
+  position: relative;
+  grid-area: nav-bar;
+  /* Aligments styles */
+  text-align: center; /* vertical alignment  center */
+  border-right: 2px solid var(--border-color);
+}
+
+.search-bar {
+  position: relative;
+  grid-area: search-bar;
+  border-bottom: var(--border-size) solid var(--border-color);
+}
+
+.filter-bar {
+  grid-area: filter-bar;
+  border-bottom: var(--border-size) solid var(--border-color);
+
+}
+
+.main-content {
+  grid-area: main-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

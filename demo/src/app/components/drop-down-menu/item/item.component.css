@@ -1,0 +1,24 @@
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Manrope;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  margin: 4px 0;
+}
+
+.checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify {
+  background: var(--hover-color);
+}
+
+

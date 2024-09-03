@@ -1,0 +1,11 @@
+<ul class="pagination">
+  <li
+    *ngFor="let i of quantity"
+    class="item"
+    [class.active]="i == 6"
+    id="{{ i }}"
+    (click)="sendItemId($event)"
+  >
+    <!--TODO: implement logic to show only necesary pages -->
+  </li>
+</ul>

@@ -1,0 +1,43 @@
+.pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 50px 50px;
+  font-family: Quicksand;
+  font-size: 12px;
+  font-weight: 600;
+  list-style-type:  none;
+  background: red;
+  text-transform: capitalize;
+  color: #222;
+  cursor: pointer;
+}
+.pill span {
+  margin-right: 4px;
+}
+
+.pill div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: 6px;
+
+
+}
+
+.pill div p {
+  color: #111;
+  font-weight: 800;
+}
+.plus {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+}
+
+#text-plus {
+  text-transform: lowercase;
+  font-weight: 800;
+}

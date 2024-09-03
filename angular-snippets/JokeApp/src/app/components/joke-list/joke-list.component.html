@@ -1,0 +1,7 @@
+<!--This container is going to render the JokeComponent class -->
+<!-- We are to using the "ngFor" directive to render several Joke objects in the view -->
+<app-joke
+  *ngFor="let j of jokeList" [joke]="j"
+>
+
+</app-joke>

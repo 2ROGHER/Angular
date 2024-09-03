@@ -1,0 +1,90 @@
+.card {
+  position: relative;
+  border-radius: 4px;
+  width: 256px;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, .4) ;
+}
+
+.picture {
+  width: 100%;
+  height: 168px;
+  background: #ddd;
+
+
+}
+
+.info {
+  position: relative;
+  padding: 8px;
+}
+.name {
+  font-family: Quicksand;
+  color: #222;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+}
+.notice {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Manrope";
+  text-transform: capitalize;
+
+}
+.notice:nth-child(2) {
+  color: #777777;
+}
+.notice span {
+  width: 12px;
+  height: 12px;
+  background: var(--online-color);
+  border-radius: 100%;
+}
+
+.details-container {
+  padding: 12px;
+}
+.detail {
+  position: relative;
+  margin: 8px 0 8px 0;
+}
+.detail .label {
+  position: relative;
+  font-family: Manrope;
+  text-transform: capitalize;
+  color: #777777;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+}
+
+.detail .label span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.detail h4 {
+  margin-left: 8px;
+  font-family: Quicksand;
+  font-weight: 800;
+  font-size: 20px;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.episodes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-inline-start: 0;
+  gap: 8px;
+  margin-block: 0;
+  margin: 8px 0 8px 0;
+}

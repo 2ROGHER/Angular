@@ -1,0 +1,17 @@
+.option  {
+  position: relative;
+}
+
+.label {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+}
+.list-item {
+  padding-inline-start: 0;
+  margin: 8px 0;
+}
+.list-item li {
+  list-style-type: none;
+}

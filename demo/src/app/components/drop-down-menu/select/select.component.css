@@ -1,0 +1,42 @@
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: Manrope;
+  color: #222;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 6px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+
+}
+
+.info span:nth-child(1) {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

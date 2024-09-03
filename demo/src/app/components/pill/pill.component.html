@@ -1,0 +1,42 @@
+<li
+  class="pill" *ngIf="info.type == 'info' ? true : false"
+  [ngStyle]="{'background': arrayColors[getRandomValue()].color}"
+>
+  <span>ep.</span>
+  <p>{{ info.content.split("/").pop() }}</p>
+  <!-- TODO: Implement pipe here -->
+</li>
+
+<li
+  class="pill plus"
+  *ngIf="info.type == 'badge' && info.size > 5 ? true : false"
+>
+  <div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="12"
+      height="12"
+      color="#000000"
+      fill="none"
+    >
+      <path
+        d="M12 4V20"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M4 12H20"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <p>{{ info.content }}</p>
+  </div>
+
+  <p id="text-plus">more</p>
+</li>
