@@ -1,10 +1,57 @@
-<div class="joke-container">
-  <div class="puchline">
-    {{ joke?.puchline }}
-  </div>
-  <div class="setup">
-    {{ joke?.setup }}
+<!-- Primera aproximacion -->
+<!-- <div class="container">
+  <h2 class="text-primary">{{ setup }}</h2>
+  <p class="">{{ puchline }}</p>
+  <p class="bg-primary">
+    {{ showPropertiesInUpperCase() }}
+  </p>
+</div> -->
+
+<!-- Everythin is called 'Input Property Binding', don't forget it. It's important in Angular -->
+<div
+  class="container m-3 card card-block bg-1 text-center p-3"
+  [id]="index + 1"
+  [ccCardHover]="{ querySelector: '.card-text' }"
+>
+  <!-- Manipuling the elemente with DOM property binding -->
+  <h2 class="text-primary card-title p-2" [hidden]="false">{{ item.setup }}</h2>
+  <!--WE can hidden the element adding the 'hidden' atribute-->
+  <!-- <p class="card-text" hidden>{{ item.punchline }}</p> -->
+
+  <!--Manipuling the HTML attribute -->
+  <!-- <p class="card-text" [hidden]="item.hidden">{{ item.punchline }}</p> -->
+
+  <!-- Nosotros queremos realizar projecciones aqui -->
+  <!-- Esta es una forma de agregar multiples projecciones -->
+
+  <!--/**** He aqui el tema de proyeccion ****/-->
+  <!-- <p class="card-text" [hidden]="item.hidden"><ng-content select="h4"></ng-content></p> -->
+
+  <!-- La otra forma de agregar multiples projecciones seria matcheando nombres de clases -->
+  <!-- <p class="card-text" [hidden]="item.hidden"><ng-content select=".setup"></ng-content></p> -->
+
+  <!-- With @HostListener mehods implemented here -->
+  <p class="card-text" [style.display]="'none'">{{ item.punchline }}</p>
+  <!-- Output property Bindig -->
+  <div class="cotainer">
+    <button
+      class="btn btn-primary w-2 m-2"
+      (click)="item.hidden = !item.hidden"
+    >
+      Tell me v.1
+    </button>
+    <button class="btn btn-success w-2 m-2" (click)="toggle(item)">
+      Tell me v.2
+    </button>
+
+    <!--Implementing Data Domain Model with JOkes, store the data in Joke object arrays -->
+    <button class="btn btn-danger w-2 m-2" (click)="item.toggle()">
+      Tell me v.2
+    </button>
+
+    <button class="btn btn-danger w-2 m-2" (click)="deleteJoke()">
+      delete
+    </button>
+    <button class="btn btn-info w-2 m-2" (click)="editJoke()">edit</button>
   </div>
 </div>
-
-

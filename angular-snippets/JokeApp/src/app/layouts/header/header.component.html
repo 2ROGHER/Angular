@@ -1,0 +1,43 @@
+<!-- 1. with (HashLocataionStrategy) hardcoded navigation with <a></a> -->
+<!-- <nav class="navbar bg-faded">
+  <a class="navbar-brand" href="/#/">iTunes App</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active"><a class="nav-link" href="/#/">Home</a></li>
+    <li class="nav-item"> -->
+<!-- En este caso solo estamos agrenda un simple href standard con su respecivo valor -->
+<!-- <a class="nav-link" href="/#/search">Search</a>
+    </li>
+  </ul>
+</nav> -->
+
+<!-- 2. Programmatically Navigation by Router service -->
+<!-- <nav class="navbar bg-faded">
+  <a class="navbar-brand" (click)="onGoHome()">iTunes App</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active"><a class="nav-link" (click)="onGoHome()" >Home</a></li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="onGoSearch()">Search</a>
+    </li>
+  </ul>
+</nav> -->
+
+<!-- 3. Using [routerLInk] directive -->
+<nav class="navbar bg-faded">
+  <a class="navbar-brand" [routerLink]="['home']">iTunes App</a>
+  <ul class="nav navbar-nav">
+  <!-- si se agrega la directiva de [routerLinkActive] en el padre igual funcionara-->
+    <li class="nav-item"
+      [routerLinkActive]="['active']"
+    >
+      <a
+        class="nav-link"
+        [routerLink]="['home']"
+        [routerLinkActive]="['active']"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['search']">Search</a>
+    </li>
+  </ul>
+</nav>

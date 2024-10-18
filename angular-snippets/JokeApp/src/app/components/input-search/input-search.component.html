@@ -1,0 +1,19 @@
+<p>TODO: Make this componente in other file for Reactive-Driven Form</p>
+<h1>
+  Estaremos trabajando en este caso con las (rutas parametrizadas), ojo con
+  esto, ahora el (term) sera parte de la URL
+</h1>
+
+<div>
+  <div>
+    <input
+      type="text"
+      name="input-search"
+      placeholder="Input search term..."
+      #term
+    />
+  </div>
+  <div>
+    <button type="button" (click)="onSearch(term.value)">search</button>
+  </div>
+</div>

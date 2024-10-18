@@ -1,0 +1,13 @@
+<!--Este es el template form control -->
+
+<input
+  type="search"
+  value=""
+  name="input-search"
+  placeholder="Type something..."
+  [formControl]="searchField"
+/>
+<hr />
+<ul>
+  <li *ngFor="let s of searches">{{ s }}</li>
+</ul>

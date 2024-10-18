@@ -1,0 +1,80 @@
+<!-- Model Driven Form -->
+<form [formGroup]="myForm" class="w-25 bg-dark p-4" (ngSubmit)="onSubmit()">
+  <!--- myForm es el modelo, etonces cuando se usa el formContorlName direcive, esto busca en el modelo y lo vincula con el campo-->
+  <fieldset formGroupName="name">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" />
+    </div>
+
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" formControlName="lastName" />
+    </div>
+  </fieldset>
+
+  <div
+    class="form-group"
+    [ngClass]="{
+      'has-danger':
+        myForm.controls.email.invalid && myForm.controls.email.dirty,
+      'has-success': myForm.controls.email.valid && myForm.controls.email.dirty
+    }"
+  >
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email" />
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="password" />
+    <div
+      class="form-control-feedback"
+      *ngIf="myForm.controls.password.invalid && myForm.controls.password.dirty"
+    >
+      Field invalid
+    </div>
+
+    <div
+      class="form-control-feedback"
+      *ngIf="
+        myForm.controls.password.errors &&
+        (myForm.controls.password.dirty || myForm.controls.password.touched)
+      "
+    >
+      <p *ngIf="myForm.controls.password.errors.required">
+        Password is required
+      </p>
+      <p *ngIf="myForm.controls.password.errors.minLength">
+        Password to be 8 characters as long, we need another
+        {{ myForm.controls.password.errors.minLength.actualLength }} characters
+      </p>
+    </div>
+  </div>
+
+  <div class="from-group">
+    <label>Language</label>
+    <select class="form-control" formControlName="language">
+      <option value="">Please select a language</option>
+      <option *ngFor="let l of langs; let i = index" [value]="l">
+        {{ l }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group mt-3 mb-3">
+    <button type="submit" class="form-control btn btn-info">Login</button>
+  </div>
+
+  <h1>Info about value property with input constrols:</h1>
+  <pre>{{ myForm.value | json }}</pre>
+
+  <h2>Info if the <b>control</b> is dirty or prestine</h2>
+  <pre>Dirty ?: {{ myForm.controls.email.dirty }}</pre>
+  <pre>Prestine ?: {{ myForm.controls.email.pristine }}</pre>
+  <pre>Touched ?: {{ myForm.controls.email.touched }}</pre>
+  <pre>Untouched ?: {{ myForm.controls.email.untouched }}</pre>
+  <pre>Valid ?: {{ myForm.controls.email.valid }}</pre>
+  <pre>Invalid ?: {{ myForm.controls.email.invalid }}</pre>
+</form>

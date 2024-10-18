@@ -1,7 +1,79 @@
-<!--This container is going to render the JokeComponent class -->
-<!-- We are to using the "ngFor" directive to render several Joke objects in the view -->
-<app-joke
-  *ngFor="let j of jokeList" [joke]="j"
->
+<!-- Here we need to loop in the data and display Jokes for each items in the array -->
 
+<!-- show list jokes with Array  Domain Models -->
+<!-- <app-joke
+  *ngFor="let i of dataWithModels"
+  [item]="i"
+
+></app-joke> -->
+
+<!-- this components is called 'Composed Component'-->
+<app-joke-form
+  (jokeCreated)="addJoke($event)"
+></app-joke-form> <!-- In this case the '$event' args is an instance by EventEmitter class with a new Joke instance class -->
+<!-- 'jokeCreated' property is a property "JokeFormComponent". This is a event that  is fired whe something happens and the 'creteJoke' functios is called-->
+
+<!-- <app-joke
+  *ngFor="let joke of dataWithModels" [item]="joke"
+  (removeJoke)="deleteJoke($event)"
+  (updateJoke)="editJoke($event)"
+></app-joke> -->
+
+<!-- Using Content Projection -->
+<!-- We can use the 'template reference variables' -->
+
+<h1 #header>This is the lecture about View Jokes as Children</h1>
+
+<app-joke
+  *ngFor="let joke of dataWithModels; let i = index"
+
+  [item]="joke"
+  [index]="i"
+  (removeJoke)="deleteJoke($event)"
+  (updateJoke)="editJoke($event)"
+
+>
+  <!-- Here we want to set the elment that will be projected innter this loop -->
+
+  <!-- La desventaja de esto es que no podemos vincular las propieades y metodos del JokeComponente solo e su padre JokeListComponent -->
+  <h4 class="setup">
+    {{ joke.punchline }}
+  </h4>
 </app-joke>
+
+
+<!-- Using directives -->
+
+<!-- tipo de Directivas -->
+<!--
+1. Structural Directives: Cambia la estructura del DOM
+2. Attribute Directives: Camibia la appariencia, la vista de la vista.
+3. Template Directives
+-->
+<!-- <div class="test" [ngStyle]="{'background': 'green', 'color': '#f3e8f9'}">Hello this is a NgStyle test DOM element</div>
+<div class="text" [ngStyle]="{'color': '#ff393d'}">I'm using [ngStyle] directive to coloraizer my text</div> -->
+
+<!-- Using [ngStyle] dinamicamente -->
+<!-- <span class="dynamic" [ngStyle]="{'color': 3 < 5 ? 'skyblue' : '#fff3ee' }">This is a paragraph with [ngStyle] dynamiclly, this is super important!</span>
+
+<p class="individual-style" [style.color]="'blue'" [ngStyle]="{'font-size.rem':5}">Setting individual properties to this element with [ngStyle] directive</p>
+<p [ngStyle]="getStyles()">This is a paragraph to set dynamic styles using [ngStyle] directiva an return functions</p> -->
+
+<!-- Using individual Style properties [style.<property>]-->
+<!-- <h1 [style.color]="'tomato'">Setting individual properties with style properties and [style] diretive</h1>
+<h2 [style.background]="'yellow'" [style.color]="'#000'" [ngStyle]="{'font-size.rem':'1.4'}">Setting other individual HTML elements styles with [individual style properties] and [style] directive</h2> -->
+
+<!-- El [ngClass] directiva nos permite establecer nombres de clases dinamicamente para un elemento DOM -->
+<!-- Uso de directivas de attribute [ngClass]-->
+<!-- <span class="ng-class" [ngClass]="{'text-danger': true}">We are going to use the [ngClass] directive</span>
+<h1 [ngClass]="{'sigle-class-add': 3 < 3 ? false : true}">Some h1 heading to set the class name with [ngClass]</h1> -->
+
+<!-- Otra alternativa puede ser [class]-->
+<!-- <p [class]="'bg-danger text-white'">Hello, this alternative is used by [class] </p>
+<h2 [class]="'text-danger'">Some text with [adding input binding property] with [class] directive</h2>
+<h1 [class.text-info]="true">Some text with [input binding property and class-name-properties]</h1> -->
+
+<!-- ngNotBindable -->
+<!-- <div>To render the name variable we use this syntaxis <pre ngNonBindable>{{ name }}</pre></div> -->
+
+

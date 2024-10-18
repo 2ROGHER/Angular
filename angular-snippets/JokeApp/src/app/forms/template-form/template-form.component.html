@@ -1,0 +1,78 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit()" class="position-relative w-25 p-4 overflow-hidden">
+  <fieldset ngModelGroup="name">
+    <div class="form-group">
+      <label>First Nam: </label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First Name"
+        name="first-name"
+        ngModel
+        required
+      />
+    </div>
+
+    <div class="form-group"></div>
+    <label>Last Name</label>
+    365
+    <input type="text" class="form-control" name="last-name" ngModel required />
+  </fieldset>
+
+  <div
+  class="form-group"
+  [ngClass]="{
+    'has-danger': email.invalid && (email.dirty || email.touched),
+    'has-success': email.valid && (email.dirty || email.touched)
+  }"
+  >
+    <label>Email</label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      [(ngModel)]="model.email"
+      #email="ngModel"
+      required
+      pattern="[^ @]*@[& @]*"
+    />
+  </div>
+
+
+  <div class="form-group">
+    <label>Password</label>
+    <!-- config two-way bingin (template form control)-->
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      [(ngModel)]="model.password"
+      #password="ngModel"
+      required
+      minlength="8"
+      maxlength="32"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>Language</label>
+    <select class="form-control">
+      <option value="">Please select a language</option>
+      <option *ngFor="let lang of langs" [value]="lang">
+        {{ lang }}
+      </option>
+    </select>
+  </div>
+
+  <pre class="position-relative pt-4 pb-4">{{ myForm.value | json }}</pre>
+
+  <div class="email-validators">
+    <!-- <pre>Valid ? {{ myForm.controls['email'].valid }}</pre>
+    <pre>Dirty ? {{ myForm.controls['email'].dirty }}</pre>
+    <pre>Touched ? {{ myForm.controls['email'].touched }}</pre> -->
+    <pre>Valid ? {{ myForm.form.controls['email']?.valid }}</pre>
+    <pre>Dirty ? {{ myForm.form.controls["email"]?.dirty }}</pre>
+    <pre>Touched ? {{ myForm.form.controls["email"]?.touched }}</pre>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">submit</button>
+</form>
